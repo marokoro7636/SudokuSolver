@@ -30,7 +30,7 @@ import jp.gr.java_conf.alpherg0221.sudokusolver.util.massToFlat
 fun HomeContent(
     list: List<List<Int>>,
     loading: Boolean = false,
-    errorMessage: String = "",
+    errorMessage: Boolean = false,
     onClickItem: (Int, Int) -> Unit = { _, _ -> },
     onCalculate: () -> Unit = {},
     deleteAll: () -> Unit = {},
@@ -98,11 +98,11 @@ fun HomeContent(
                     }
                 }
                 OutlinedButton(onClick = onCalculate) {
-                    Text(text = "Calculate")
+                    Text(text = stringResource(id = R.string.calculate))
                 }
                 Spacer(modifier = Modifier.height(24.dp))
                 Text(
-                    text = errorMessage,
+                    text = if (errorMessage) stringResource(id = R.string.error_msg) else "",
                     color = MaterialTheme.colors.error
                 )
             }

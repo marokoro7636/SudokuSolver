@@ -4,4 +4,7 @@
     <string name="home">Home</string>
     <string name="settings">Settings</string>
     <string name="info">App Info</string>
+
+    <string name="calculate">Calculate</string>
+    <string name="error_msg">Same number in the same row, column, or square</string>
 </resources>

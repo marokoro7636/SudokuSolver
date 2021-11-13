@@ -15,7 +15,7 @@ import kotlinx.coroutines.withContext
 data class HomeUiState(
     val currentRow: Int = 0,
     val currentColumn: Int = 0,
-    val errorMessage: String = "",
+    val errorMessage: Boolean = false,
     val loading: Boolean = false,
 )
 
@@ -47,14 +47,14 @@ class HomeViewModel : ViewModel() {
 
     fun calculate() {
         viewModelScope.launch {
-            _uiState.update { it.copy(loading = true) }
+            _uiState.update { it.copy(loading = true, errorMessage = false) }
             try {
                 val result = withContext(Dispatchers.Default) {
                     CalcSudoku(_field.value).calculate()
                 }
                 _field.update { result.map { it.toMutableList() }.toMutableList() }
             } catch (e: NoAnswerException) {
-                _uiState.update { it.copy(errorMessage = "同じ行、列、マスに同じ数字があります") }
+                _uiState.update { it.copy(errorMessage = true) }
             } finally {
                 _uiState.update { it.copy(loading = false) }
             }
