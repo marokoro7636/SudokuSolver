@@ -9,6 +9,8 @@ import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeScreen
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeViewModel
+import jp.gr.java_conf.alpherg0221.sudokusolver.ui.info.InfoScreen
+import jp.gr.java_conf.alpherg0221.sudokusolver.ui.info.InfoViewModel
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -35,7 +37,13 @@ fun SudokuSolverNavGraph(
 
         }
         composable(MainDestinations.INFO_ROUTE) {
-
+            val infoViewModel: InfoViewModel = viewModel(
+                factory = InfoViewModel.provideFactory()
+            )
+            InfoScreen(
+                infoViewModel = infoViewModel,
+                onBack = onBack,
+            )
         }
     }
 }
