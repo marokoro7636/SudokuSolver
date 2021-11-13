@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SudokuSolver</string>
+
+    <string name="home">ホーム</string>
+    <string name="settings">設定</string>
+    <string name="info">SudokuSolverについて</string>
+
+    <string name="calculate">計算する</string>
+    <string name="error_msg">同じ行、列、マスに同じ数字があります</string>
+</resources>
