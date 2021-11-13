@@ -57,6 +57,8 @@ fun SudokuSolverApp() {
                 SudokuSolverNavGraph(
                     navController = navController,
                     openDrawer = { scope.launch { drawerState.open() } },
+                    navigateToOSS = navigationActions.navigateToOSS,
+                    navigateToPrivacyPolicy = navigationActions.navigateToPrivacyPolicy,
                     onBack = navigationActions.onBack
                 )
             }

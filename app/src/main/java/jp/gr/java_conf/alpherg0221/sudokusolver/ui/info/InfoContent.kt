@@ -20,6 +20,7 @@ fun InfoContent(
     onBack: () -> Unit,
     onVersionClick: () -> Unit,
     onOSSClick: () -> Unit,
+    onPrivacyPolicyClick: () -> Unit,
 ) {
     Scaffold(
         topBar = {
@@ -43,6 +44,10 @@ fun InfoContent(
                 title = stringResource(id = R.string.oss),
                 subtitle = stringResource(id = R.string.oss_sub),
                 onClick = onOSSClick,
+            )
+            PreferencesItem(
+                title = stringResource(id = R.string.privacy_policy),
+                onClick = onPrivacyPolicyClick
             )
         }
     }

@@ -7,6 +7,8 @@ import androidx.compose.runtime.getValue
 @Composable
 fun InfoScreen(
     infoViewModel: InfoViewModel,
+    navigateToOSS: () -> Unit,
+    navigateToPrivacyPolicy: () -> Unit,
     onBack: () -> Unit,
 ) {
     val uiState by infoViewModel.infoUiState.collectAsState()
@@ -14,6 +16,7 @@ fun InfoScreen(
     InfoContent(
         onBack = onBack,
         onVersionClick = {},
-        onOSSClick = {}
+        onOSSClick = navigateToOSS,
+        onPrivacyPolicyClick = navigateToPrivacyPolicy,
     )
 }

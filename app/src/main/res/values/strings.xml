@@ -4,11 +4,12 @@
     <!-- screen name -->
     <string name="home">Home</string>
     <string name="settings">Settings</string>
-    <string name="info">App Info</string>
+    <string name="info">About Sudoku Solver</string>
 
     <!-- info screen content -->
     <string name="version">Version</string>
     <string name="version_sub">1.0.0</string>
     <string name="oss">Open source licenses</string>
     <string name="oss_sub">License details for open source software</string>
+    <string name="privacy_policy">Privacy Policy</string>
 </resources>

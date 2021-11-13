@@ -17,6 +17,8 @@ import jp.gr.java_conf.alpherg0221.sudokusolver.ui.info.InfoViewModel
 fun SudokuSolverNavGraph(
     navController: NavHostController = rememberAnimatedNavController(),
     openDrawer: () -> Unit = {},
+    navigateToOSS: () -> Unit = {},
+    navigateToPrivacyPolicy: () -> Unit = {},
     onBack: () -> Unit = {},
     startDestination: String = MainDestinations.HOME_ROUTE,
 ) {
@@ -42,6 +44,8 @@ fun SudokuSolverNavGraph(
             )
             InfoScreen(
                 infoViewModel = infoViewModel,
+                navigateToOSS = navigateToOSS,
+                navigateToPrivacyPolicy = navigateToPrivacyPolicy,
                 onBack = onBack,
             )
         }
