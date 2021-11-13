@@ -81,7 +81,6 @@ fun AppLogo(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.width(8.dp))
         Text(
             text = stringResource(id = R.string.app_name),
-            fontStyle = FontStyle.Italic,
             fontWeight = FontWeight.ExtraBold,
             fontFamily = FontFamily.Monospace
         )
