@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 @Composable
 fun HomeScreen(
     homeViewModel: HomeViewModel,
-    onBack: () -> Unit,
+    openDrawer: () -> Unit,
 ) {
     val uiState by homeViewModel.uiState.collectAsState()
     val field by homeViewModel.field.collectAsState()
@@ -36,6 +36,7 @@ fun HomeScreen(
         deleteAll = {
             homeViewModel.deleteAll()
         },
+        openDrawer = openDrawer,
         sheetState = sheetState,
         onCloseBottomSheet = {
             scope.launch { sheetState.hide() }

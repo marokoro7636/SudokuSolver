@@ -2,7 +2,6 @@ package jp.gr.java_conf.alpherg0221.sudokusolver.ui
 
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
@@ -11,19 +10,14 @@ import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeScreen
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeViewModel
 
-object MainDestinations {
-    const val HOME_ROUTE = "home"
-    const val SETTING_ROUTE = "setting"
-}
-
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun SudokuSolverNavGraph(
     navController: NavHostController = rememberAnimatedNavController(),
+    openDrawer: () -> Unit = {},
+    onBack: () -> Unit = {},
     startDestination: String = MainDestinations.HOME_ROUTE,
 ) {
-    val actions = remember(navController) { MainActions(navController) }
-
     AnimatedNavHost(
         navController = navController,
         startDestination = startDestination,
@@ -34,17 +28,14 @@ fun SudokuSolverNavGraph(
             )
             HomeScreen(
                 homeViewModel = homeViewModel,
-                onBack = actions.upPress,
+                openDrawer = openDrawer,
             )
         }
-        composable(MainDestinations.SETTING_ROUTE) {
+        composable(MainDestinations.SETTINGS_ROUTE) {
 
         }
-    }
-}
+        composable(MainDestinations.INFO_ROUTE) {
 
-class MainActions(navController: NavHostController) {
-    val upPress: () -> Unit = {
-        navController.navigateUp()
+        }
     }
 }

@@ -25,7 +25,7 @@ import jp.gr.java_conf.alpherg0221.sudokusolver.R
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.components.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.sudokusolver.util.massToFlat
 
-@OptIn(ExperimentalMaterialApi::class, androidx.compose.foundation.ExperimentalFoundationApi::class)
+@OptIn(ExperimentalMaterialApi::class, ExperimentalFoundationApi::class)
 @Composable
 fun HomeContent(
     list: List<List<Int>>,
@@ -34,6 +34,7 @@ fun HomeContent(
     onClickItem: (Int, Int) -> Unit = { _, _ -> },
     onCalculate: () -> Unit = {},
     deleteAll: () -> Unit = {},
+    openDrawer: () -> Unit,
     sheetState: ModalBottomSheetState,
     onCloseBottomSheet: () -> Unit = {},
     sheetContent: @Composable ColumnScope.() -> Unit = {}
@@ -49,7 +50,7 @@ fun HomeContent(
                 InsetAwareTopAppBar(
                     title = { Text(text = stringResource(id = R.string.app_name)) },
                     navigationIcon = {
-                        IconButton(onClick = { /* openDrawer */ }) {
+                        IconButton(onClick = openDrawer) {
                             Icon(imageVector = Icons.Rounded.Menu, contentDescription = null)
                         }
                     },
