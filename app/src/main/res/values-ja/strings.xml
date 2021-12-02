@@ -5,6 +5,13 @@
     <string name="settings">設定</string>
     <string name="info">SudokuSolverについて</string>
 
+    <!-- info screen content -->
+    <string name="version">バージョン</string>
+    <string name="version_sub">1.0.0</string>
+    <string name="oss">オープンソースライセンス</string>
+    <string name="oss_sub">License details for open source software</string>
+    <string name="privacy_policy">プライバシーポリシー</string>
+
     <string name="calculate">計算する</string>
     <string name="error_msg">同じ行、列、マスに同じ数字があります</string>
 </resources>

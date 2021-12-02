@@ -1,6 +1,9 @@
 package jp.gr.java_conf.alpherg0221.sudokusolver.ui
 
+import android.content.Intent
+import android.net.Uri
 import androidx.navigation.NavHostController
+import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
 object MainDestinations {
     const val HOME_ROUTE = "home"
@@ -17,6 +20,14 @@ class MainActions(navController: NavHostController) {
     }
     val navigateToInfo: () -> Unit = {
         navController.navigate(MainDestinations.INFO_ROUTE)
+    }
+    val navigateToOSS: () -> Unit = {
+        val context = navController.context
+        context.startActivity(Intent(context, OssLicensesMenuActivity::class.java))
+    }
+    val navigateToPrivacyPolicy: () -> Unit = {
+        val context = navController.context
+        context.startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://marokoro7636.github.io/SudokuSolver/")))
     }
     val onBack: () -> Unit = {
         navController.navigateUp()
