@@ -27,7 +27,7 @@ class MainActions(navController: NavHostController) {
     }
     val navigateToPrivacyPolicy: () -> Unit = {
         val context = navController.context
-        context.startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://github.com/marokoro7636/SudokuSolver")))
+        context.startActivity(Intent(Intent.ACTION_VIEW).setData(Uri.parse("https://marokoro7636.github.io/SudokuSolver/")))
     }
     val onBack: () -> Unit = {
         navController.navigateUp()
