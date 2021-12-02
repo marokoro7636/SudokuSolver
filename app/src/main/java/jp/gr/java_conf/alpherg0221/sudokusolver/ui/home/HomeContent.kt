@@ -75,8 +75,8 @@ fun HomeContent(
                             .padding(18.dp)
                             .border(
                                 BorderStroke(
-                                    width = (8.dp),
-                                    color = MaterialTheme.colors.onSurface.copy(alpha = .5f)
+                                    width = (3.dp),
+                                    color = MaterialTheme.colors.onSurface.copy(alpha = 1f)
                                 )
                             ),
                         cells = GridCells.Fixed(3),
@@ -89,7 +89,7 @@ fun HomeContent(
                                     Mass(
                                         list = list,
                                         position = index1 to index2,
-                                        squareSize = (maxWidth - 18.dp) / 9,
+                                        squareSize = (maxWidth - 42.dp) / 9,
                                         onClickItem = onClickItem,
                                     )
                                 }
@@ -146,7 +146,7 @@ fun Mass(
             .border(
                 BorderStroke(
                     width = (1.5.dp),
-                    color = MaterialTheme.colors.onSurface.copy(alpha = .5f)
+                    color = MaterialTheme.colors.onSurface.copy(alpha = 1f)
                 )
             ),
         verticalArrangement = Arrangement.Center,
