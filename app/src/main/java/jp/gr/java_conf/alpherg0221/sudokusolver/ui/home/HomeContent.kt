@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.insets.navigationBarsPadding
+import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.sudokusolver.R
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.components.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.sudokusolver.util.massToFlat

@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import jp.gr.java_conf.alpherg0221.compose.material.DrawerButton
 import jp.gr.java_conf.alpherg0221.sudokusolver.R
 
 @Composable
