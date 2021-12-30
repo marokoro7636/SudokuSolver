@@ -2,8 +2,9 @@ package jp.gr.java_conf.alpherg0221.sudokusolver.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
-val Teal700 = Color(0xFF018786)
+val RoyalBlue200 = Color(0xFF98a7ed)
+val RoyalBlue500 = Color(0xFF004eda)
+val RoyalBlue700 = Color(0xFF003bc3)
+val Jade200 = Color(0xFF88D4B9)
+val Jade500 = Color(0xFF20A679)
+val Jade700 = Color(0xFF15875E)

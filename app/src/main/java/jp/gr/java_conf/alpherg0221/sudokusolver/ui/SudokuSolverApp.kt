@@ -2,13 +2,18 @@ package jp.gr.java_conf.alpherg0221.sudokusolver.ui
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.animation.ExperimentalAnimationApi
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.currentBackStackEntryAsState
 import com.google.accompanist.insets.ProvideWindowInsets
+import com.google.accompanist.insets.navigationBarsPadding
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
+import jp.gr.java_conf.alpherg0221.sudokusolver.data.AppContainer
+import jp.gr.java_conf.alpherg0221.sudokusolver.model.AppTheme
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.theme.SudokuSolverTheme
 import kotlinx.coroutines.launch
 
@@ -61,10 +66,12 @@ fun SudokuSolverApp(
                         closeDrawer = { scope.launch { drawerState.close() } }
                     )
                 },
+                modifier = Modifier.navigationBarsPadding(),
                 drawerState = drawerState,
                 gesturesEnabled = currentRoute == MainDestinations.HOME_ROUTE
             ) {
                 SudokuSolverNavGraph(
+                    appContainer = appContainer,
                     navController = navController,
                     openDrawer = { scope.launch { drawerState.open() } },
                     navigateToOSS = navigationActions.navigateToOSS,

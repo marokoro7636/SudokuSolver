@@ -12,10 +12,13 @@ import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeScreen
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeViewModel
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.info.InfoScreen
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.info.InfoViewModel
+import jp.gr.java_conf.alpherg0221.sudokusolver.ui.setting.SettingScreen
+import jp.gr.java_conf.alpherg0221.sudokusolver.ui.setting.SettingViewModel
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
 fun SudokuSolverNavGraph(
+    appContainer: AppContainer,
     navController: NavHostController = rememberAnimatedNavController(),
     openDrawer: () -> Unit = {},
     navigateToOSS: () -> Unit = {},
@@ -37,7 +40,13 @@ fun SudokuSolverNavGraph(
             )
         }
         composable(MainDestinations.SETTINGS_ROUTE) {
-
+            val settingViewModel: SettingViewModel = viewModel(
+                factory = SettingViewModel.provideFactory(appContainer.settingRepository)
+            )
+            SettingScreen(
+                settingViewModel = settingViewModel,
+                onBack = onBack,
+            )
         }
         composable(MainDestinations.INFO_ROUTE) {
             val infoViewModel: InfoViewModel = viewModel(

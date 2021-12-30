@@ -11,6 +11,7 @@ import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.ui.Alignment
 import androidx.core.view.WindowCompat
+import jp.gr.java_conf.alpherg0221.sudokusolver.SudokuSolverApplication
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         val appContainer = (application as SudokuSolverApplication).container
 
         setContent {
-            SudokuSolverApp()
+            SudokuSolverApp(appContainer)
         }
     }
 }

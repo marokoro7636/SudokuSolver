@@ -4,6 +4,7 @@
     package="jp.gr.java_conf.alpherg0221.sudokusolver">
 
     <application
+        android:name=".SudokuSolverApplication"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"

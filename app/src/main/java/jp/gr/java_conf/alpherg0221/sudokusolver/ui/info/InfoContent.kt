@@ -14,8 +14,6 @@ import com.google.accompanist.insets.navigationBarsPadding
 import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
 import jp.gr.java_conf.alpherg0221.compose.material.PreferencesItem
 import jp.gr.java_conf.alpherg0221.sudokusolver.R
-import jp.gr.java_conf.alpherg0221.sudokusolver.ui.components.InsetAwareTopAppBar
-import jp.gr.java_conf.alpherg0221.sudokusolver.ui.components.PreferencesItem
 
 @Composable
 fun InfoContent(

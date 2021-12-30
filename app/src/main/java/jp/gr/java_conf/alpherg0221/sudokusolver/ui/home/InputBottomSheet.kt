@@ -9,13 +9,10 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Backspace
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import jp.gr.java_conf.alpherg0221.sudokusolver.ui.components.BottomSheetLayout
-import jp.gr.java_conf.alpherg0221.sudokusolver.ui.theme.SudokuSolverTheme
+import jp.gr.java_conf.alpherg0221.compose.material.BottomSheetLayout
 
 
 @OptIn(ExperimentalFoundationApi::class)
