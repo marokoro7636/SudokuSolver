@@ -17,6 +17,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         WindowCompat.setDecorFitsSystemWindows(window, false)
 
+        val appContainer = (application as SudokuSolverApplication).container
+
         setContent {
             SudokuSolverApp()
         }

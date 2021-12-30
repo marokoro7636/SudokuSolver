@@ -5,6 +5,13 @@
     <string name="settings">設定</string>
     <string name="info">SudokuSolverについて</string>
 
+    <!-- setting screen content -->
+    <string name="general">一般</string>
+    <string name="theme">テーマ</string>
+    <string name="dark_theme">ダークテーマ</string>
+    <string name="light_theme">ライトテーマ</string>
+    <string name="default_theme">デフォルト</string>
+
     <!-- info screen content -->
     <string name="version">バージョン</string>
     <string name="version_sub">1.0.0</string>

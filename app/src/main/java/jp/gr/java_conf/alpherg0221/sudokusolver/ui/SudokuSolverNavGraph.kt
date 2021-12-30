@@ -7,6 +7,7 @@ import androidx.navigation.NavHostController
 import com.google.accompanist.navigation.animation.AnimatedNavHost
 import com.google.accompanist.navigation.animation.composable
 import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import jp.gr.java_conf.alpherg0221.sudokusolver.data.AppContainer
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeScreen
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeViewModel
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.info.InfoScreen

@@ -14,8 +14,18 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun SudokuSolverApp() {
-    SudokuSolverTheme {
+fun SudokuSolverApp(
+    appContainer: AppContainer
+) {
+    val theme by appContainer.settingRepository.observeTheme().collectAsState(initial = AppTheme.Default)
+
+    SudokuSolverTheme(
+        darkTheme = when (theme) {
+            AppTheme.Dark -> true
+            AppTheme.Light -> false
+            AppTheme.Default -> isSystemInDarkTheme()
+        }
+    ) {
         ProvideWindowInsets {
             val systemUiController = rememberSystemUiController()
             val darkIcons = MaterialTheme.colors.isLight
