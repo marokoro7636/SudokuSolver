@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -71,10 +72,9 @@ fun AppLogo(modifier: Modifier = Modifier) {
     Row(modifier = modifier) {
         Image(
             modifier = Modifier.background(shape = MaterialTheme.shapes.small, color = Color.White),
-            imageVector = Icons.Filled.OpenInNew,
+            painter = painterResource(id = R.drawable.icon),
             contentDescription = null,
             contentScale = ContentScale.Crop,
-            colorFilter = ColorFilter.tint(MaterialTheme.colors.primary)
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text(
