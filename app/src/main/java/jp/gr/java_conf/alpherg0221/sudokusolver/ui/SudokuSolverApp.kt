@@ -40,14 +40,14 @@ fun SudokuSolverApp(
 
             val navController = rememberAnimatedNavController()
             val navigationActions = remember(navController) {
-                MainActions(navController)
+                NavigationActions(navController)
             }
 
             val scope = rememberCoroutineScope()
 
             val navBackStackEntry by navController.currentBackStackEntryAsState()
             val currentRoute =
-                navBackStackEntry?.destination?.route ?: MainDestinations.HOME_ROUTE
+                navBackStackEntry?.destination?.route ?: NavigationDestinations.HOME_ROUTE
 
             val drawerState = rememberDrawerState(DrawerValue.Closed)
 
@@ -68,7 +68,7 @@ fun SudokuSolverApp(
                 },
                 modifier = Modifier.navigationBarsPadding(),
                 drawerState = drawerState,
-                gesturesEnabled = currentRoute == MainDestinations.HOME_ROUTE
+                gesturesEnabled = currentRoute == NavigationDestinations.HOME_ROUTE
             ) {
                 SudokuSolverNavGraph(
                     appContainer = appContainer,

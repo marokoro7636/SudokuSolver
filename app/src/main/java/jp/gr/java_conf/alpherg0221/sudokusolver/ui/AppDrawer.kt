@@ -6,14 +6,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.OpenInNew
 import androidx.compose.material.icons.rounded.Home
 import androidx.compose.material.icons.rounded.Info
 import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -38,7 +36,7 @@ fun AppDrawer(
         DrawerButton(
             icon = Icons.Rounded.Home,
             label = stringResource(R.string.home),
-            isSelected = currentRoute == MainDestinations.HOME_ROUTE,
+            isSelected = currentRoute == NavigationDestinations.HOME_ROUTE,
             action = {
                 navigateToHome()
                 closeDrawer()
@@ -48,7 +46,7 @@ fun AppDrawer(
         DrawerButton(
             icon = Icons.Rounded.Settings,
             label = stringResource(R.string.settings),
-            isSelected = currentRoute == MainDestinations.SETTINGS_ROUTE,
+            isSelected = currentRoute == NavigationDestinations.SETTINGS_ROUTE,
             action = {
                 navigateToSetting()
                 closeDrawer()
@@ -58,7 +56,7 @@ fun AppDrawer(
         DrawerButton(
             icon = Icons.Rounded.Info,
             label = stringResource(R.string.info),
-            isSelected = currentRoute == MainDestinations.INFO_ROUTE,
+            isSelected = currentRoute == NavigationDestinations.INFO_ROUTE,
             action = {
                 navigateToInfo()
                 closeDrawer()

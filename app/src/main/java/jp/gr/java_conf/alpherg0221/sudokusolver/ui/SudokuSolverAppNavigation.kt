@@ -5,21 +5,21 @@ import android.net.Uri
 import androidx.navigation.NavHostController
 import com.google.android.gms.oss.licenses.OssLicensesMenuActivity
 
-object MainDestinations {
+object NavigationDestinations {
     const val HOME_ROUTE = "home"
     const val SETTINGS_ROUTE = "setting"
     const val INFO_ROUTE = "info"
 }
 
-class MainActions(navController: NavHostController) {
+class NavigationActions(navController: NavHostController) {
     val navigateToHome: () -> Unit = {
-        navController.navigate(MainDestinations.HOME_ROUTE)
+        navController.navigate(NavigationDestinations.HOME_ROUTE)
     }
     val navigateToSettings: () -> Unit = {
-        navController.navigate(MainDestinations.SETTINGS_ROUTE)
+        navController.navigate(NavigationDestinations.SETTINGS_ROUTE)
     }
     val navigateToInfo: () -> Unit = {
-        navController.navigate(MainDestinations.INFO_ROUTE)
+        navController.navigate(NavigationDestinations.INFO_ROUTE)
     }
     val navigateToOSS: () -> Unit = {
         val context = navController.context

@@ -24,13 +24,13 @@ fun SudokuSolverNavGraph(
     navigateToOSS: () -> Unit = {},
     navigateToPrivacyPolicy: () -> Unit = {},
     onBack: () -> Unit = {},
-    startDestination: String = MainDestinations.HOME_ROUTE,
+    startDestination: String = NavigationDestinations.HOME_ROUTE,
 ) {
     AnimatedNavHost(
         navController = navController,
         startDestination = startDestination,
     ) {
-        composable(MainDestinations.HOME_ROUTE) {
+        composable(NavigationDestinations.HOME_ROUTE) {
             val homeViewModel: HomeViewModel = viewModel(
                 factory = HomeViewModel.provideFactory()
             )
@@ -39,7 +39,7 @@ fun SudokuSolverNavGraph(
                 openDrawer = openDrawer,
             )
         }
-        composable(MainDestinations.SETTINGS_ROUTE) {
+        composable(NavigationDestinations.SETTINGS_ROUTE) {
             val settingViewModel: SettingViewModel = viewModel(
                 factory = SettingViewModel.provideFactory(appContainer.settingRepository)
             )
@@ -48,7 +48,7 @@ fun SudokuSolverNavGraph(
                 onBack = onBack,
             )
         }
-        composable(MainDestinations.INFO_ROUTE) {
+        composable(NavigationDestinations.INFO_ROUTE) {
             val infoViewModel: InfoViewModel = viewModel(
                 factory = InfoViewModel.provideFactory()
             )
