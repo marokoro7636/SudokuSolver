@@ -38,3 +38,7 @@ captures/
 .cxx/
 
 .DS_Store
+
+# Add by User
+keystore.jks
+private_key.pepk
