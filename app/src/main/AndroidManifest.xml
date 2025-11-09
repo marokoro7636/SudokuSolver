@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="jp.gr.java_conf.alpherg0221.sudokusolver">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name=".SudokuSolverApplication"
@@ -11,7 +10,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SudokuSolver">
+        android:theme="@style/Theme.SudokuSolver"
+        tools:targetApi="tiramisu">
         <activity
             android:name=".ui.MainActivity"
             android:exported="true"

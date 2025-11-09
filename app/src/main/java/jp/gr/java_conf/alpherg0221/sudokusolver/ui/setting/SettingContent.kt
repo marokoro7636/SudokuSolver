@@ -3,11 +3,13 @@ package jp.gr.java_conf.alpherg0221.sudokusolver.ui.setting
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.ArrowBack
+import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Brightness4
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import jp.gr.java_conf.alpherg0221.compose.material.AppDivider
 import jp.gr.java_conf.alpherg0221.compose.material.InsetAwareTopAppBar
@@ -39,13 +41,13 @@ fun SettingContent(
                     title = { Text(text = stringResource(id = R.string.settings)) },
                     navigationIcon = {
                         IconButton(onClick = onBack) {
-                            Icon(imageVector = Icons.Rounded.ArrowBack, contentDescription = null)
+                            Icon(imageVector = Icons.AutoMirrored.Rounded.ArrowBack, contentDescription = null)
                         }
                     }
                 )
             },
-            content = {
-                Column {
+            content = { padding ->
+                Column(modifier = Modifier.padding(padding)) {
                     PreferencesTitle(title = stringResource(id = R.string.general))
                     PreferencesItem(
                         title = stringResource(id = R.string.theme),

@@ -7,7 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
-import jp.gr.java_conf.alpherg0221.sudokusolver.util.NoAnswerException
+import androidx.compose.runtime.toMutableStateList
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -19,11 +19,13 @@ fun HomeScreen(
     val uiState by homeViewModel.uiState.collectAsState()
     val field by homeViewModel.field.collectAsState()
 
+    val list = field.toMutableStateList().map { it.toMutableStateList() }
+
     val scope = rememberCoroutineScope()
     val sheetState = rememberModalBottomSheetState(ModalBottomSheetValue.Hidden)
 
     HomeContent(
-        list = field,
+        list = list,
         loading = uiState.loading,
         errorMessage = uiState.errorMessage,
         onClickItem = { r, c ->

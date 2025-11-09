@@ -4,9 +4,9 @@ import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
-import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.google.accompanist.navigation.animation.composable
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import jp.gr.java_conf.alpherg0221.sudokusolver.data.AppContainer
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeScreen
 import jp.gr.java_conf.alpherg0221.sudokusolver.ui.home.HomeViewModel
@@ -19,14 +19,14 @@ import jp.gr.java_conf.alpherg0221.sudokusolver.ui.setting.SettingViewModel
 @Composable
 fun SudokuSolverNavGraph(
     appContainer: AppContainer,
-    navController: NavHostController = rememberAnimatedNavController(),
+    navController: NavHostController = rememberNavController(),
     openDrawer: () -> Unit = {},
     navigateToOSS: () -> Unit = {},
     navigateToPrivacyPolicy: () -> Unit = {},
     onBack: () -> Unit = {},
     startDestination: String = NavigationDestinations.HOME_ROUTE,
 ) {
-    AnimatedNavHost(
+    NavHost(
         navController = navController,
         startDestination = startDestination,
     ) {
