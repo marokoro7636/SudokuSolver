@@ -40,14 +40,17 @@ class HomeViewModel : ViewModel() {
 
     fun updateField(r: Int, c: Int, value: Int) {
         _field.update { field ->
-            field[r][c] = value
-            field
+            val newField = MutableList(9) { i ->
+                field[i].toMutableList()
+            }
+            newField[r][c] = value
+            newField
         }
     }
 
     fun calculate() {
+        _uiState.update { it.copy(loading = true, errorMessage = false) }
         viewModelScope.launch {
-            _uiState.update { it.copy(loading = true, errorMessage = false) }
             try {
                 val result = withContext(Dispatchers.Default) {
                     CalcSudoku(_field.value).calculate()
